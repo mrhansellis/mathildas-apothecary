@@ -6,7 +6,8 @@ class InventoryControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
+      mainReagentList: []
     };
   }
 
@@ -16,15 +17,21 @@ class InventoryControl extends React.Component {
     }));
   }
 
+  handleAddingNewReagentToList = (newReagent) => {
+    const newMainReagentList = this.state.mainReagentList.concat(newReagent);
+    this.setState({mainReagentList: newMainReagentList,
+                  formVisibleOnPage: false });
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
 
     if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewReagentForm />
+      currentlyVisibleState = <NewReagentForm onNewReagentCreation={this.handleAddingNewReagentToList} />
       buttonText = "Return to Reagent List"
     } else {
-    currentlyVisibleState = <ReagentList />
+    currentlyVisibleState = <ReagentList reagentList={this.state.mainReagentList} />
     buttonText = "Add Reagent";
     }
     return (
