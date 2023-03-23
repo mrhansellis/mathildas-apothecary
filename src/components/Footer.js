@@ -4,6 +4,8 @@ import logo from "../logo.svg";
 export default function Footer(){
   
   const footerStyles = {
+    backgroundColor: "#F6F6F6",
+    textAlign: "center",
     margin: "auto"
   }
   
