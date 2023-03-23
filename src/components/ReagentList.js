@@ -2,9 +2,17 @@ import React from "react";
 
 export default function ReagentList() {
 
+  const listStyles = {
+    backgroundColor: "#F6F6F6",
+    fontFamily: "Trattatello",
+    textAlign: "center"
+  }
+
   return (
     <>
-      <p>Hi There</p>
+      <div style={listStyles}>
+        <p>Hi There</p>
+      </div>
     </>
   )
 }
