@@ -12,8 +12,7 @@ export default function Reagent(props) {
     <>
       <div style={reagentStyles}>
         <h3>{props.reagent}</h3>
-        <h3>Origin: {props.origin}</h3>
-        <h3>₹:{props.price}</h3>
+        <h4>Origin: {props.origin}</h4>
       </div>
     </>
   )

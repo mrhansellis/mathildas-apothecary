@@ -19,6 +19,7 @@ export default function ReagentList(props) {
         reagent={reagent.reagent}
         origin={reagent.origin}
         price={reagent.price}
+        quantity={reagent.quantity}
         key={reagent.id}
         id={reagent.id} />
         )}
