@@ -27,6 +27,13 @@ class InventoryControl extends React.Component {
     }
   }
 
+  handleReagentDetailClick = () => {
+    console.log("I've been clicked");
+    this.setState({
+      selectedReagent: null
+    });
+  }
+
   handleAddingNewReagentToList = (newReagent) => {
     const newMainReagentList = this.state.mainReagentList.concat(newReagent);
     this.setState({mainReagentList: newMainReagentList,
@@ -38,12 +45,20 @@ class InventoryControl extends React.Component {
     this.setState({selectedReagent: selectedReagent});
   }
 
+  handleDeletingReagent = (id) => {
+    const newMainReagentList = this.state.mainReagentList.filter(reagent => reagent.id !== id);
+    this.setState({
+      mainReagentList: newMainReagentList,
+      selectedReagent: null
+    })
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
 
     if (this.state.selectedReagent != null) {
-      currentlyVisibleState = <ReagentDetail reagent = {this.state.selectedReagent} />
+      currentlyVisibleState = <ReagentDetail reagent = {this.state.selectedReagent} onReagentDetailClick={this.handleReagentDetailClick}/>
       buttonText = "Return to Reagent List";
     }else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewReagentForm onNewReagentCreation={this.handleAddingNewReagentToList} />

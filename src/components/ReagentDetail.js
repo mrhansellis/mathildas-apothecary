@@ -12,7 +12,7 @@ export default function ReagentDetail(props) {
 
   return (
     <>
-      <div style={detailStyles}>
+      <div style={detailStyles} onClick = {() => props.onReagentDetailClick()}>
         <h1>Reagent Details</h1>
         <hr />
         <h3>{reagent.reagent}</h3>
