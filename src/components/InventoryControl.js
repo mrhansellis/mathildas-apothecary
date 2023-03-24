@@ -2,6 +2,7 @@ import React from "react";
 import NewReagentForm from "./NewReagentForm";
 import ReagentList from "./ReagentList";
 import ReagentDetail from "./ReagentDetail";
+import EditReagentForm from "./EditReagentForm"
 
 class InventoryControl extends React.Component {
   constructor(props) {
@@ -9,7 +10,8 @@ class InventoryControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       mainReagentList: [],
-      selectedReagent: null
+      selectedReagent: null,
+      editing: false
     };
   }
 
@@ -18,7 +20,8 @@ class InventoryControl extends React.Component {
     if (this.state.selectedReagent != null) {
       this.setState({
         formVisibleOnPage: false,
-        selectedReagent: null
+        selectedReagent: null,
+        editing: false
       });
       } else {    
         this.setState(prevState => ({
@@ -53,16 +56,36 @@ class InventoryControl extends React.Component {
     })
   }
 
+  handleEditClick = () => {
+    this.setState({editing: true});
+  }
+
+  handleEditingReagentInList = (reagentToEdit) => {
+    const editedMainReagentList = this.state.mainReagentList
+      .filter(reagent => reagent.id !== this.state.selectedReagent.id)
+      .concat(reagentToEdit);
+    this.setState({
+      mainReagentList: editedMainReagentList,
+      editing: false,
+      selectedReagent: null
+    });
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if (this.state.selectedReagent != null) {
-      currentlyVisibleState = <ReagentDetail reagent = {this.state.selectedReagent} onClickingDelete={this.handleDeletingReagent} onReagentDetailClick={this.handleReagentDetailClick}/>
-      buttonText = "Return to Reagent List";
-    }else if (this.state.formVisibleOnPage) {
+    if (this.state.editing) {
+      currentlyVisibleState = <EditReagentForm reagent = {this.state.selectedReagent} onEditReagent = {this.handleEditingReagentInList} />
+      buttonText = "Return to Inventory";
+    } else if (this.state.selectedReagent != null) {
+      currentlyVisibleState = <ReagentDetail 
+                              reagent = {this.state.selectedReagent} onClickingDelete={this.handleDeletingReagent} onReagentDetailClick={this.handleReagentDetailClick}
+                              onClickingEdit = {this.handleEditClick}/>
+      buttonText = "Return to Inventory";
+    } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewReagentForm onNewReagentCreation={this.handleAddingNewReagentToList} />
-      buttonText = "Return to Reagent List"
+      buttonText = "Return to Inventory"
     } else {
     currentlyVisibleState = <ReagentList reagentList={this.state.mainReagentList} onReagentSelection={this.handleChangingSelectedReagent} />
     buttonText = "Add Reagent";

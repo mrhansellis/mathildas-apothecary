@@ -21,6 +21,7 @@ export default function ReagentDetail(props) {
       </div>
       <div style={detailStyles}>
         <button onClick={() => onClickingDelete(reagent.id)}>Remove From Inventory</button>
+        <button onClick={props.onClickingEdit}>Edit Reagent Details</button>
       </div>
     </>
   );
@@ -28,5 +29,6 @@ export default function ReagentDetail(props) {
 
 ReagentDetail.propTypes = {
   reagent: PropTypes.object,
-  onClickingDelete: PropTypes.func
+  onClickingDelete: PropTypes.func,
+  onClickingEdit: PropTypes.func
 };
