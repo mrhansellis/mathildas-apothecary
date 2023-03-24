@@ -58,7 +58,7 @@ class InventoryControl extends React.Component {
     let buttonText = null;
 
     if (this.state.selectedReagent != null) {
-      currentlyVisibleState = <ReagentDetail reagent = {this.state.selectedReagent} onReagentDetailClick={this.handleReagentDetailClick}/>
+      currentlyVisibleState = <ReagentDetail reagent = {this.state.selectedReagent} onClickingDelete={this.handleDeletingReagent} onReagentDetailClick={this.handleReagentDetailClick}/>
       buttonText = "Return to Reagent List";
     }else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewReagentForm onNewReagentCreation={this.handleAddingNewReagentToList} />
