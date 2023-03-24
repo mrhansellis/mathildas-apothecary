@@ -15,7 +15,8 @@ export default function ReagentList(props) {
       <div style={listStyles}>
         {props.reagentList.map((reagent) =>
         
-        <Reagent 
+        <Reagent
+        whenReagentClicked = { props.onReagentSelection }
         reagent={reagent.reagent}
         origin={reagent.origin}
         price={reagent.price}
@@ -29,5 +30,6 @@ export default function ReagentList(props) {
 }
 
 ReagentList.propTypes = {
-  reagentList: PropTypes.array
+  reagentList: PropTypes.array,
+  onReagentSelection: PropTypes.func
 };
