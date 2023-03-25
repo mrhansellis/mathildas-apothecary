@@ -13,6 +13,7 @@ export default function Reagent(props) {
       <div style={reagentStyles} onClick = {() => props.whenReagentClicked(props.id)}>
         <h3>{props.reagent}</h3>
         <h4>Origin: {props.origin}</h4>
+        <h4>Quantity: {props.quantity}</h4>
       </div>
     </>
   )
@@ -22,5 +23,5 @@ Reagent.propTypes = {
   reagent: PropTypes.string.isRequired,
   origin: PropTypes.string.isRequired,
   id: PropTypes.string,
-  whenReagentClicked: PropTypes.func
+  whenReagentClicked: PropTypes.func,
 }

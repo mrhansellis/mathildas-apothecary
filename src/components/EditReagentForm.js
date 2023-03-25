@@ -10,7 +10,6 @@ export default function EditReagentForm(props) {
     props.onEditReagent({reagent: e.target.reagent.value, origin: e.target.origin.value, price: e.target.price.value, quantity: reagent.quantity, id: reagent.id});
   }
   
-  
   return (
     <>
     <ReusableForm
