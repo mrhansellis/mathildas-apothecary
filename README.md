@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Mathilda's Apothecary
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### A single page site used my Mathilda to track her inventory of alchemy reagents. She can use this site to add Reagents to the inventory, all reagents are purchased at a set quantity of 25. She can examine and edit the details of each reagent and sell them one by one using a handy button. Once the quantity is set to zero she can no longer sell and she will be informed that the product is SOLD OUT. 
 
-## Available Scripts
+## Authored by:
+Hans Ellis March 2023
 
-In the project directory, you can run:
+***
 
-### `npm start`
+## Table of Contents
+1. [Technologies Used](#technologies-used)
+2. [Setup Instructions](#installation-and-setup)
+3. [Known Bugs](#known-bugs)
+4. [License Information](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- React
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation And Setup
 
-### `npm run build`
+1. Clone the repository: '[https://github.com/mrhansellis/mathildas-apothecary]'
+2. Navigate to the '[apothecary]' directory on your computer
+3. Open with your favorite text editor
+4. To start a development server and view the project in the browser:
+    - Navigate to '[bird-track]' in your command line
+    - Run the command "npm install" to install dependencies
+    - Optionally, run the command "npm run build" to bundle the files
+    - Finally, run the command "npm run start" to start a development server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Known Bugs
+- When a single reagent is updated (by form or by "sell" button) that reagent will appear at the bottom of the reagent list, this is likely a result of using the concat() method to update the list.
+- Cannot update quantity and stay on details page.
+- Styling missing from forms.
+- Wonky animated icon.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## License
+*Hans Ellis, January 2023. Available for distribution, modification, inspection, and application under [GPLv3 License](https://www.gnu.org/licenses/gpl-3.0.en.html)*
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This application makes previous work from the Epicodus staff as a reference for learning material. It has been used with permission of the staff.
