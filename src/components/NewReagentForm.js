@@ -11,7 +11,7 @@ export default function NewReagentForm(props) {
       reagent: e.target.reagent.value,
       origin: e.target.origin.value,
       price: e.target.price.value,
-      quantity: 5,
+      quantity: 25,
       id: v4()
     });
   }

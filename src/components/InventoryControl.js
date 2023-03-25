@@ -72,14 +72,16 @@ class InventoryControl extends React.Component {
   }
 
   handleReducingQuantity = (reagentToReduce) => {
-    const reducedReagent = { ...reagentToReduce, quantity: reagentToReduce.quantity - 1 }
-    const reducedMainReagentList = this.state.mainReagentList
-    .filter(reagent => reagent.id !== this.state.selectedReagent.id)
-    .concat(reducedReagent);
-    this.setState({
-      mainReagentList: reducedMainReagentList,
-      selectedReagent: null
-    });
+    if (reagentToReduce.quantity >= 1) {
+      const reducedReagent = { ...reagentToReduce, quantity: reagentToReduce.quantity - 1 }
+      const reducedMainReagentList = this.state.mainReagentList
+      .filter(reagent => reagent.id !== this.state.selectedReagent.id)
+      .concat(reducedReagent);
+      this.setState({
+        mainReagentList: reducedMainReagentList,
+        selectedReagent: null
+      });
+    }
   }
 
   render(){
