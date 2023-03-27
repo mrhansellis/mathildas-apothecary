@@ -12,6 +12,7 @@ Hans Ellis March 2023
 2. [Setup Instructions](#installation-and-setup)
 3. [Known Bugs](#known-bugs)
 4. [License Information](#license)
+5. [Component Diagram](#component-diagram)
 
 
 ## Technologies Used
@@ -35,6 +36,10 @@ Hans Ellis March 2023
 - Cannot update quantity and stay on details page.
 - Styling missing from forms.
 - Wonky animated icon.
+
+## Component Diagram
+
+<img src="./public/apothecary-diagram.png" width="500" margin="center">
 
 
 
