@@ -25,7 +25,7 @@ Hans Ellis March 2023
 2. Navigate to the '[apothecary]' directory on your computer
 3. Open with your favorite text editor
 4. To start a development server and view the project in the browser:
-    - Navigate to '[bird-track]' in your command line
+    - Navigate to '[apothecary]' in your command line
     - Run the command "npm install" to install dependencies
     - Optionally, run the command "npm run build" to bundle the files
     - Finally, run the command "npm run start" to start a development server
@@ -39,7 +39,7 @@ Hans Ellis March 2023
 
 ## Component Diagram
 
-<img src="./public/apothecary-diagram.png" width="500" margin="center">
+<img src="./public/apothecary-diagram.png" width="500" alig="center">
 
 
 

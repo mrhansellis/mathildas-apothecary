@@ -79,7 +79,7 @@ class InventoryControl extends React.Component {
       .concat(reducedReagent);
       this.setState({
         mainReagentList: reducedMainReagentList,
-        selectedReagent: null
+        selectedReagent: reducedMainReagentList.filter(reagentToReduce => reagentToReduce.id)[0]
       });
     }
   }
